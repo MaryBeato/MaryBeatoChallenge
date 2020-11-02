@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="MaryBeatoChallenge(failed)">
+    <classes>
+      <class name="TestCases.SendMessage_withoutOrderReference">
+        <methods>
+          <include name="goToUrl"/>
+          <include name="recordFailure"/>
+          <include name="sendMessageTest_inCorrectly"/>
+          <include name="setup"/>
+          <include name="closedDriver"/>
+        </methods>
+      </class> <!-- TestCases.SendMessage_withoutOrderReference -->
+    </classes>
+  </test> <!-- MaryBeatoChallenge(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

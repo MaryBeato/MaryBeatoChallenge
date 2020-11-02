@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Challenge Suite">
+    <test name="Send a Correct message">
+        <classes>
+            <class name="TestCases.SendMessage">
+                <methods>
+                    <include name = "sendMessageTest_correctly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Send a Correct message to Customer Service">
+        <classes>
+            <class name="TestCases.sendMessageCustomerService">
+                <methods>
+                    <include name = "sendMessageCustomerService_correctly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Send a Correct message to WebMaster">
+        <classes>
+            <class name="TestCases.sendMessageWebMaster">
+                <methods>
+                    <include name = "sendMessageWebMaster_correctly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Trying to Send a Correct message without Message">
+        <classes>
+            <class name="TestCases.SendMessage_withoutMessage">
+                <methods>
+                    <include name = "sendMessageTest_inCorrectly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Trying to Send a Correct message without Email">
+        <classes>
+            <class name="TestCases.SendMessage_withoutEmail">
+                <methods>
+                    <include name = "sendMessageTest_inCorrectly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Trying to Send a Correct message without Order Reference">
+        <classes>
+            <class name="TestCases.SendMessage_withoutOrderReference">
+                <methods>
+                    <include name = "sendMessageTest_inCorrectly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Trying to Send a Correct message with an Invalid Email">
+        <classes>
+            <class name="TestCases.SendMessage_withInvalidEmail">
+                <methods>
+                    <include name = "sendMessageTest_inCorrectly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Trying to Send a Correct message with an Invalid file Extension">
+        <classes>
+            <class name="TestCases.SendMessage_FileExtensionInvalid">
+                <methods>
+                    <include name = "sendMessageTest_inCorrectly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

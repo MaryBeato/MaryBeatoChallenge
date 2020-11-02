@@ -1,0 +1,46 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" verbose="1" name="Contact Form Suite" annotations="JDK" parallel="tests">
+
+    <test name="Send Message Correctly">
+        <classes>
+            <class name="TestCases.SendMessage"/>
+        </classes>
+    </test>
+
+    <test name="Send Message with incorrect file extension">
+        <classes>
+            <class name="TestCases.SendMessage_FileExtensionInvalid"/>
+        </classes>
+    </test>
+    <test name="Send Message without email">
+        <classes>
+            <class name="TestCases.SendMessage_withoutEmail"/>
+        </classes>
+    </test>
+    <test name="Send Message without message">
+        <classes>
+            <class name="TestCases.SendMessage_withoutMessage"/>
+        </classes>
+    </test>
+    <test name="Send Message without Order reference">
+        <classes>
+            <class name="TestCases.SendMessage_withoutOrderReference"/>
+        </classes>
+    </test>
+    <test name="Send Message Correctly to customer service">
+        <classes>
+            <class name="TestCases.sendMessageCustomerService"/>
+        </classes>
+    </test>
+    <test name="Send Message Correctly to webMaster">
+        <classes>
+            <class name="TestCases.sendMessageWebMaster"/>
+        </classes>
+    </test>
+    <test name="Send Message with an invalid email">
+        <classes>
+            <class name="TestCases.SendMessage_withInvalidEmail"/>
+        </classes>
+    </test>
+</suite>
