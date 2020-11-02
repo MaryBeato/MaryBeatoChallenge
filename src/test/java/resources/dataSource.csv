@@ -1,0 +1,8 @@
+Customer service,memail@test.com,1234,\\testfileImage.jpg,Test challenge
+Webmaster,memail@test.com,1234,\\curl-ca-bundle.crt,Test challenge
+Customer service,memailtest.com,1234,\\testfileImage.jpg,Test challenge
+Webmaster,,1234,\\curl-ca-bundle.crt,Test challenge
+Webmaster,memail@test.com,1234,\\curl-ca-bundle.crt,
+Customer service,memail@test.com,,\\testfileImage.jpg,Test challenge
+Customer service,memail@test.com,1234,\\testfileImage.jpg,Test challenge
+Webmaster,memail@test.com,1234,\\testfileImage.jpg,Test challenge

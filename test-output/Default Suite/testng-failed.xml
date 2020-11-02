@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="MaryBeatoChallenge(failed)">
     <classes>
-      <class name="TestCases.SendMessage_withoutOrderReference">
+      <class name="TestCases.SendMessage">
         <methods>
           <include name="goToUrl"/>
           <include name="recordFailure"/>
-          <include name="sendMessageTest_inCorrectly"/>
           <include name="setup"/>
+          <include name="sendMessageTest_correctly"/>
           <include name="closedDriver"/>
         </methods>
-      </class> <!-- TestCases.SendMessage_withoutOrderReference -->
+      </class> <!-- TestCases.SendMessage -->
     </classes>
   </test> <!-- MaryBeatoChallenge(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->
