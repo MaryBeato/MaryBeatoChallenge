@@ -2,6 +2,7 @@ package TestCases;
 
 import Pages.ContactForm;
 import Pages.ContactMessageResponse;
+import Settings.Data;
 import com.google.common.io.Files;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -15,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class SendMessage_withoutOrderReference {
@@ -24,7 +26,9 @@ public class SendMessage_withoutOrderReference {
     ContactMessageResponse responseForm;
     Path resourceDirectory;
     String absolutePath;
-
+    Data valMessage;
+    List<String[]> dataMessage = null;
+    String[] dMess = null;
 
     @BeforeTest
     public void setup(){
@@ -35,11 +39,13 @@ public class SendMessage_withoutOrderReference {
 
         resourceDirectory = Paths.get("src","test","java","resources");
         absolutePath = resourceDirectory.toFile().getAbsolutePath();
-
+        valMessage = new Data();
     }
     @BeforeMethod
     public void goToUrl(){
         driver.get("http://automationpractice.com/index.php?controller=contact");
+        dataMessage = valMessage.getData(absolutePath+"\\dataSource.csv");
+        dMess = dataMessage.get(5);
     }
 
     /**
@@ -54,8 +60,14 @@ public class SendMessage_withoutOrderReference {
 
         String header = form.getLabelHeader();
         Assert.assertTrue(header.contains("CUSTOMER SERVICE - CONTACT US"));
+        String subject = dMess[0];
+        String email =  dMess[1];
+        String order =  dMess[2];
+        String file =  dMess[3];
+        String message =  dMess[4];
+        form.SendMessage(subject,email,order,absolutePath+"\\"+file,message);
 
-        form.SendMessage("Customer service","prueba@hot.com","",absolutePath+"\\testfileImage.jpg","Test challenge");
+       // form.SendMessage("Customer service","prueba@hot.com","",absolutePath+"\\testfileImage.jpg","Test challenge");
        try {
            System.out.println(responseForm.getAlertErrorLabel());
            Assert.assertTrue(responseForm.getAlertErrorLabel().toLowerCase().contains("there is 1 error"));

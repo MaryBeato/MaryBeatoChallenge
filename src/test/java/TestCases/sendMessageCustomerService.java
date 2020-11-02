@@ -3,6 +3,7 @@ package TestCases;
 
 import Pages.ContactForm;
 import Pages.ContactMessageResponse;
+import Settings.Data;
 import com.google.common.io.Files;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -16,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class sendMessageCustomerService {
@@ -26,7 +28,9 @@ public class sendMessageCustomerService {
     ContactMessageResponse responseForm;
     Path resourceDirectory;
     String absolutePath;
-
+    Data valMessage;
+    List<String[]> dataMessage = null;
+    String[] dMess = null;
 
     @BeforeTest
     public void setup(){
@@ -37,11 +41,13 @@ public class sendMessageCustomerService {
 
         resourceDirectory = Paths.get("src","test","java","resources");
         absolutePath = resourceDirectory.toFile().getAbsolutePath();
-
+        valMessage = new Data();
     }
     @BeforeMethod
     public void goToUrl(){
         driver.get("http://automationpractice.com/index.php?controller=contact");
+        dataMessage = valMessage.getData(absolutePath+"\\dataSource.csv");
+        dMess = dataMessage.get(6);
     }
 
      /**
@@ -56,16 +62,21 @@ public class sendMessageCustomerService {
 
         String header = form.getLabelHeader();
         Assert.assertTrue(header.contains("CUSTOMER SERVICE - CONTACT US"));
+        String subject = dMess[0];
+        String email =  dMess[1];
+        String order =  dMess[2];
+        String file =  dMess[3];
+        String message =  dMess[4];
 
-
-        form.setSubjectHeadingList("Customer service");
+        form.setSubjectHeadingList(subject);
         System.out.println(form.getLabelCustomerServ().toLowerCase());
         Assert.assertTrue(form.getLabelCustomerServ().toLowerCase().contains("for any question about a product, an order"));
 
-        form.setEmailTextBox("test@prueba.com");
-        form.setOrderReferenceTextBox("1234");
-        form.setAttachBox(absolutePath+"\\testfileImage.jpg");
-        form.setMessageBox("Test challenge");
+
+        form.setEmailTextBox(email);
+        form.setOrderReferenceTextBox(order);
+        form.setAttachBox(absolutePath+"\\"+file);
+        form.setMessageBox(message);
         form.clickSendMessage();
 
         Assert.assertTrue(responseForm.getAlertSuccesLabel().toLowerCase().contains("your message has been successfully sent to our team."));

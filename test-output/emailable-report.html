@@ -25,14 +25,67 @@ td,th {border:1px solid #009;padding:.25em .5em}
 <body>
 <table cellspacing="0" cellpadding="0" class="testOverview">
 <tr><th>Test</th><th>Methods<br/>Passed</th><th>Scenarios<br/>Passed</th><th># skipped</th><th># failed</th><th>Total<br/>Time</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em"><a href="#t1">MaryBeatoChallenge</a></td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">15.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">Send Message Correctly</a></td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">15.3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em"><a href="#t2">Send Message with incorrect file extension</a></td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">11.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t3">Send Message without email</a></td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">9.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em"><a href="#t4">Send Message without message</a></td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">10.0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t5">Send Message without Order reference</a></td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">23.0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em"><a href="#t6">Send Message Correctly to customer service</a></td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">12.1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t7">Send Message Correctly to webMaster</a></td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">12.5 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em"><a href="#t8">Send Message with an invalid email</a></td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">12.8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="total"><td>Total</td>
+<td class="numi">7</td><td class="numi">7</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">107.3 seconds</td><td colspan="2">&nbsp;</td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr id="t1"><th colspan="5">MaryBeatoChallenge &#8212; passed</th></tr>
-<tr class="passedodd"><td>TestCases.SendMessage</td><td><a href="#m1"><b>sendMessageTest_correctly</b>  </a></td><td class="numi">1</td><td>1604328148207</td><td class="numi">5085</td></tr>
+<tr id="t1"><th colspan="5">Send Message Correctly &#8212; passed</th></tr>
+<tr class="passedodd"><td>TestCases.SendMessage</td><td><a href="#m1"><b>sendMessageTest_correctly</b>  </a></td><td class="numi">1</td><td>1604329109234</td><td class="numi">3979</td></tr>
+<tr id="t2"><th colspan="5">Send Message with incorrect file extension &#8212; passed</th></tr>
+<tr class="passedodd"><td>TestCases.SendMessage_FileExtensionInvalid</td><td><a href="#m2"><b>sendMessageTest_inCorrectly</b>  </a></td><td class="numi">1</td><td>1604329123341</td><td class="numi">1941</td></tr>
+<tr id="t3"><th colspan="5">Send Message without email &#8212; passed</th></tr>
+<tr class="passedodd"><td>TestCases.SendMessage_withoutEmail</td><td><a href="#m3"><b>sendMessageTest_inCorrectly</b>  </a></td><td class="numi">1</td><td>1604329134552</td><td class="numi">1686</td></tr>
+<tr id="t4"><th colspan="5">Send Message without message &#8212; passed</th></tr>
+<tr class="passedodd"><td>TestCases.SendMessage_withoutMessage</td><td><a href="#m4"><b>sendMessageTest_inCorrectly</b>  </a></td><td class="numi">1</td><td>1604329143913</td><td class="numi">2309</td></tr>
+<tr id="t5"><th colspan="5">Send Message without Order reference &#8212; failed</th></tr>
+<tr class="failedodd"><td>TestCases.SendMessage_withoutOrderReference</td><td><a href="#m5"><b>sendMessageTest_inCorrectly</b>  </a></td><td class="numi">1</td><td>1604329154339</td><td class="numi">14556</td></tr>
+<tr id="t6"><th colspan="5">Send Message Correctly to customer service &#8212; passed</th></tr>
+<tr class="passedodd"><td>TestCases.sendMessageCustomerService</td><td><a href="#m6"><b>sendMessageCustomerService_correctly</b>  </a></td><td class="numi">1</td><td>1604329177285</td><td class="numi">4049</td></tr>
+<tr id="t7"><th colspan="5">Send Message Correctly to webMaster &#8212; passed</th></tr>
+<tr class="passedodd"><td>TestCases.sendMessageWebMaster</td><td><a href="#m7"><b>sendMessageWebMaster_correctly</b>  </a></td><td class="numi">1</td><td>1604329189484</td><td class="numi">4029</td></tr>
+<tr id="t8"><th colspan="5">Send Message with an invalid email &#8212; passed</th></tr>
+<tr class="passedodd"><td>TestCases.SendMessage_withInvalidEmail</td><td><a href="#m8"><b>sendMessageTest_inCorrectly</b>  </a></td><td class="numi">1</td><td>1604329201703</td><td class="numi">4341</td></tr>
 </table>
-<h1>MaryBeatoChallenge</h1>
+<h1>Send Message Correctly</h1>
 <h2 id="m1">TestCases.SendMessage:sendMessageTest_correctly</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Send Message with incorrect file extension</h1>
+<h2 id="m2">TestCases.SendMessage_FileExtensionInvalid:sendMessageTest_inCorrectly</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Send Message without email</h1>
+<h2 id="m3">TestCases.SendMessage_withoutEmail:sendMessageTest_inCorrectly</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Send Message without message</h1>
+<h2 id="m4">TestCases.SendMessage_withoutMessage:sendMessageTest_inCorrectly</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Send Message without Order reference</h1>
+<h2 id="m5">TestCases.SendMessage_withoutOrderReference:sendMessageTest_inCorrectly</h2>
+<div>
+<div class="stacktrace">java.lang.AssertionError: expected [false] but found [true]
+	at TestCases.SendMessage_withoutOrderReference.sendMessageTest_inCorrectly(SendMessage_withoutOrderReference.java:75)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+... Removed 20 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Send Message Correctly to customer service</h1>
+<h2 id="m6">TestCases.sendMessageCustomerService:sendMessageCustomerService_correctly</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Send Message Correctly to webMaster</h1>
+<h2 id="m7">TestCases.sendMessageWebMaster:sendMessageWebMaster_correctly</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Send Message with an invalid email</h1>
+<h2 id="m8">TestCases.SendMessage_withInvalidEmail:sendMessageTest_inCorrectly</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>
